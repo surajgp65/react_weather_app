@@ -17,4 +17,29 @@ const fetchDataFromAPI = (endpoint, params = {}) => {
   });
 };
 
+// const fetchDataFromAPI = (request, endpoint, data = {}) => {
+//   const config = {
+//     headers: {
+//       Authorization: `Bearer ${localStorage.getItem("token")}`,
+//     },
+//   };
+
+//   switch (request) {
+//     case "GET":
+//       return axios.get(baseUrl + endpoint, config);
+
+//     case "POST":
+//       return axios.post(baseUrl + endpoint, data, config);
+
+//     case "PUT":
+//       return axios.put(baseUrl + endpoint, data, config);
+
+//     case "DELETE":
+//       return axios.delete(baseUrl + endpoint, config);
+
+//     default:
+//       return Promise.reject("Invalid request method");
+//   }
+// };
+
 export default fetchDataFromAPI;
