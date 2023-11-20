@@ -7,25 +7,26 @@ const WeatherForecast = () => {
   const [weatherData, setWeatherData] = useState([]);
   var [location, setLocation] = useState("Mumbai");
 
-  const fetchWeatherData = async () => {
-    try {
-      const response = await fetchDataFromAPI("forecast.json", {
-        q: location,
-        days: "3",
-      });
-      setWeatherData(response.data);
-    } catch (error) {
-      console.error("Error fetching weather data:", error);
-    }
-  };
-
   useEffect(() => {
+    const fetchWeatherData = async () => {
+      try {
+        const response = await fetchDataFromAPI("forecast.json", {
+          q: location,
+          days: "3",
+        });
+        setWeatherData(response.data);
+
+        console.log(response.data);
+      } catch (error) {
+        console.error("Error fetching weather data:", error);
+      }
+    };
     fetchWeatherData();
   }, [location]);
 
   return (
     <div>
-      <h1>Weather Forecast</h1>
+      <h1 className="mb-3">Weather Forecast</h1>
 
       <input
         type="text"
