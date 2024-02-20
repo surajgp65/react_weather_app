@@ -15,8 +15,6 @@ const WeatherForecast = () => {
           days: "3",
         });
         setWeatherData(response.data);
-
-        console.log(response.data);
       } catch (error) {
         console.error("Error fetching weather data:", error);
       }
